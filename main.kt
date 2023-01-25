@@ -1,12 +1,16 @@
 fun main (args: Array<String>) {
-  println("Enter your name:")
-  val n = readLine()
+  println("Enter percentage:")
+  val a1 = readLine()
+  val a = a1?.toInt() ?: 0
 
-  println("How many times would you like it printed:")
-  val t1 = readLine()
-  val t = t1?.toInt() ?: 0
-  
-  for (i in 0 until t) {
-    println(n)
-  }
+  val grade = when(a){   
+    in 70..100 -> "A"
+     in 60..69 -> "B"
+    in 50..59-> "C"
+    in 40..49 -> "D"
+    in 30..39 -> "E"
+    in 0..29 -> "F"
+    else -> "invalid percentage!"
+  } 
+  println(grade)
 }
